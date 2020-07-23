@@ -50,10 +50,10 @@ params.batch_size = 5000;
 
 % Run
 % 2s resolucion de BOLD
-nb_steps = 1000000;
+nb_steps = 1000000; %1000000;
 b = DMF(params, nb_steps);
 
-
-%save_folder = "../../data/dmf/" + string(nb_steps/2000) + "/";
-%filename = save_folder + strjoin(string(regions), "_") + ".txt";
-%dlmwrite(filename, b(regions,:)', " ")
+regions = [44,45,46,47];
+save_folder = "../../data/dmf/" + string(nb_steps/2000) + "/";
+filename = save_folder + strjoin(string(regions), "_") + ".txt";
+dlmwrite(filename, b(regions,:)', " ")
