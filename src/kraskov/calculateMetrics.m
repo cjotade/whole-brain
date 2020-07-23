@@ -2,7 +2,7 @@ addpath('../../jidt/demos/octave')
 javaaddpath('../../jidt/infodynamics.jar');
 
 % Read Data
-datafile = '../../data/muestras/10000/samples9.txt';
+datafile = '../../data/muestras/gaussian_7/samples1.txt';
 data = load(datafile);
 
 TC = totalCorrelation(data)
