@@ -13,7 +13,7 @@ mkdir(results_folder)
 % How many data samples get from data
 num_data = [100, 1000, 10000, 100000];
 
-for i = 1:numel(data_dir)
+for i = 8:numel(data_dir)
     gaussian_i_folder = fullfile(data_folder, string(data_dir(i).name), filesep);
     disp("=========== Calculating metrics on " + gaussian_i_folder + " ============")
     gaussian_i_dir = dir(fullfile(gaussian_i_folder, '*.txt'));
