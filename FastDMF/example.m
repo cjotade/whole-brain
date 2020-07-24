@@ -54,6 +54,6 @@ nb_steps = 1000000; %1000000;
 b = DMF(params, nb_steps);
 
 regions = [44,45,46,47];
-save_folder = "../../data/dmf/" + string(nb_steps/2000) + "/";
-filename = save_folder + strjoin(string(regions), "_") + ".txt";
+save_folder = fullfile("../../data/dmf/", string(nb_steps/2000), filesep);
+filename = fullfile(save_folder, strjoin(string(regions), "_"), ".txt");
 dlmwrite(filename, b(regions,:)', " ")
