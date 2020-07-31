@@ -1,8 +1,8 @@
-function [TC] = totalCorrelation(data)
+function [TC, TC_list] = totalCorrelation(data)
     %% Data
     [data_len, n] = size(data);
     %% Terms
-    implementingClass = 'infodynamics.measures.continuous.kraskov.MutualInfoCalculatorMultiVariateKraskov1';
+    implementingClass = 'infodynamics.measures.continuous.kraskov.MutualInfoCalculatorMultiVariateKraskov2';
     TC_list = zeros(1, n-1);
     for i=2:n
         % jointVariables Columns

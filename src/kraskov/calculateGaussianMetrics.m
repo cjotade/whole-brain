@@ -4,16 +4,17 @@ javaaddpath('../../jidt/infodynamics.jar');
 % Read Data
 data_folder = '../../data/muestras/';
 data_dir = dir(data_folder);
-data_dir = data_dir(~ismember({data_dir.name}, {'.', '..', 'index.txt'}));
+data_dir = data_dir(~ismember({data_dir.name}, {'.', '..', 'index.json'}));
 
 % Results Folder
 results_folder = '../../results/muestras/';
 mkdir(results_folder)
 
 % How many data samples get from data
-num_data = [100, 1000, 10000, 100000];
+%num_data = [100, 1000, 10000, 100000];
+num_data = [1000000];
 
-for i = 8:numel(data_dir)
+for i = 1:numel(data_dir)
     gaussian_i_folder = fullfile(data_folder, string(data_dir(i).name), filesep);
     disp("=========== Calculating metrics on " + gaussian_i_folder + " ============")
     gaussian_i_dir = dir(fullfile(gaussian_i_folder, '*.txt'));
