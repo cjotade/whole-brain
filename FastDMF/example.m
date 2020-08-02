@@ -5,10 +5,11 @@
 %
 % Pedro Mediano, Apr 2020
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+tic;
 params = [];
 load data/sc_90.mat sc90
 load data/mean5HT2A_bindingaal.mat mean5HT2A_aalsymm
+load AAL/dmf_labels_ala_deco.mat dmf_labels
 
 % DMF parameters
 params.C         = sc90/max(sc90(:))*0.2; % structural connectivity
@@ -31,7 +32,7 @@ params.ce        = 310.; % excitatory non linear shape parameter
 params.g_i       = 0.087;
 params.Ii        = 177.;
 params.ci        = 615.;
-params.wgaine    = 0; % neuromodulatory gain a 0.2 (excitatorio)
+params.wgaine    = 0.0; % neuromodulatory gain a 0.2 (excitatorio)
 params.wgaini    = 0; % neuromodulatory gain (inhibitorio)
 params.G         = 2; %  Global Coupling Parameter
 params.alphas    = ones(size(params.C,1),1).*1.5; % parameter of the feedback inhibitory control
@@ -50,10 +51,13 @@ params.batch_size = 5000;
 
 % Run
 % 2s resolucion de BOLD
-nb_steps = 1000000; %1000000;
-b = DMF(params, nb_steps);
+nb_steps = 100000; %1000000;
+bold_3 = DMF(params, nb_steps);
 
-regions = [44,45,46,47];
-save_folder = fullfile("../../data/dmf/", string(nb_steps/2000), filesep);
-filename = fullfile(save_folder, strjoin(string(regions), "_"), ".txt");
-dlmwrite(filename, b(regions,:)', " ")
+toc
+
+%dmn_ids = [12 79 16 75 18 73 33 58 34 57];
+
+%save_folder = fullfile("../../data/dmf/", string(nb_steps/2000), filesep);
+%filename = fullfile(save_folder, strjoin(string(regions), "_"), ".txt");
+%dlmwrite(filename, b(regions,:)', " ")
