@@ -50,7 +50,7 @@ params.batch_size = 5000;
 
 % Run
 % 2s resolucion de BOLD
-nb_steps = 120000;
+nb_steps = 1020000;
 
 %% Generate data using params
 data_folder = "../data/firing_rates/";
@@ -69,6 +69,6 @@ for i = 1:100
     data = rates(dmn_ids, 20000:end)';
 
     % Store in folder
-    filename = fullfile(save_folder, regions_name + "_" + string(i) + ".txt");
+    filename = fullfile(save_folder, "samples_" + string(i) + ".txt");
     dlmwrite(filename, data, " ")
 end
