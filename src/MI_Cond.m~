@@ -1,0 +1,15 @@
+function [miCondValue] = MI_Cond(data, jointVariable1Columns, jointVariable2Columns, condVariable3Columns, implementingClass)
+    % jointVariables
+    jointVariable1 = data(:, jointVariable1Columns);
+    jointVariable2 = data(:, jointVariable2Columns);
+    condVariable3 = data(:, condVariable3Columns);
+
+    % MI Conditional Estimator
+    miCalc = javaObject(implementingClass);
+
+    miCalc.initialise(length(jointVariable1Columns),length(jointVariable2Columns),length(condVariable3Columns));
+    miCalc.setObservations(octaveToJavaDoubleArray(jointVariable1), ...
+        octaveToJavaDoubleArray(jointVariable2), ...
+        octaveToJavaDoubleArray(condVariable3));
+    miCondValue = miCalc.computeAverageLocalOfObservations();
+end
