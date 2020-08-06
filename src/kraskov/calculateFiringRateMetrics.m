@@ -2,7 +2,7 @@ addpath('../../jidt/demos/octave')
 javaaddpath('../../jidt/infodynamics.jar');
 
 % Read Data
-data_folder = '../../data/firing_rates_1e6/';
+data_folder = '../../data/firing_rates/';
 data_dir = dir(data_folder);
 data_dir = data_dir(~ismember({data_dir.name}, {'.', '..', 'index.json'}));
 
@@ -11,8 +11,8 @@ results_folder = '../../results/firing_rates/';
 mkdir(results_folder)
 
 % How many data samples get from data
-%num_data = [100, 1000, 10000, 100000];
-num_data = [1000000];
+num_data = [100, 1000, 10000, 100000];
+%num_data = [1000000];
 
 % Number of variables or regions
 num_variables = 10;
