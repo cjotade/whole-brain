@@ -50,23 +50,29 @@ params.batch_size = 5000;
 
 % Run
 % 2s resolucion de BOLD
-nb_steps = 1020000;
+nb_steps = 120000;
 
 %% Generate data using params
 data_folder = "../data/firing_rates/";
 mkdir(data_folder)
-regions_name = "dmn";
+regions_name = "visual"; % "dmn", "no_dmn", "visual"
 save_folder = fullfile(data_folder, regions_name, filesep);
 mkdir(save_folder)
+
+
+%dmn_ids = [12 79 16 75 18 73 33 58 34 57];
+%no_dmn_ids = [5 13 85 43 22 76 21 60 32 18];
+%visual_ids = [19 72 20 71 25 66 26 65 27 64];
+
+regions = [19 72 20 71 25 66 26 65 27 64];
 
 for i = 1:100
     tic;
     rates = DMF(params, nb_steps, 'rate');
     toc
 
-    % DMN
-    dmn_ids = [12 79 16 75 18 73 33 58 34 57];
-    data = rates(dmn_ids, 20000:end)';
+    % Select regions
+    data = rates(regions, 20000:end)';
 
     % Store in folder
     filename = fullfile(save_folder, "samples_" + string(i) + ".txt");
