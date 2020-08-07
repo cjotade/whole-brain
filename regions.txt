@@ -1,0 +1,35 @@
+dmn_ids = [12 79 16 75 18 73 33 58 34 57]
+12: L Front Sup Med
+79: R Front Sup Med
+16: L Cingulum Ant
+75: R Cingulum Ant
+18:'L Cingulum Post'
+73:'R Cingulum Post'
+33:'L Angular      '
+58:'R Angular      '
+34:'L Precuneus    '
+57: 'R Precuneus    '
+
+no_dmn_ids = [5 13 85 43 22 76 21 60 32 18]
+5: 'L Front Mid Orb'
+13:'L Front Med Orb'
+85:'R Front Inf Ope'
+43:'L Temporal Mid '
+22:'L Calcarine    '
+76:'R Insula       '
+21:'L Amygdala     '
+60:'R Parietal Inf '
+32:'L SupraMarginal'
+18:'L Cingulum Post'
+
+visual_ids = [19 72 20 71 25 66 26 65 27 64]
+19: 'L Hippocampus  '
+72:'R Hippocampus  '
+20:'L ParaHippocamp'
+71:'R ParaHippocamp'
+25:'L Occipital Sup'
+66:'R Occipital Mid'
+26:'L Occipital Mid'
+65:'R Occipital Mid'
+27:'L Occipital Inf'
+64:'R Occipital Inf'
