@@ -55,16 +55,17 @@ nb_steps = 120000;
 %% Generate data using params
 data_folder = "../data/firing_rates/";
 mkdir(data_folder)
-regions_name = "visual"; % "dmn", "no_dmn", "visual"
+regions_name = "4L_dmn"; % "dmn", "no_dmn", "visual"
 save_folder = fullfile(data_folder, regions_name, filesep);
 mkdir(save_folder)
 
 
 %dmn_ids = [12 79 16 75 18 73 33 58 34 57];
-%no_dmn_ids = [5 13 85 43 22 76 21 60 32 18];
+%random_ids = [5 13 85 43 22 76 21 60 32 18];
 %visual_ids = [19 72 20 71 25 66 26 65 27 64];
+%4L_dmn_ids = [12 16 18 33];
 
-regions = [19 72 20 71 25 66 26 65 27 64];
+regions = [12 16 18 33];
 
 for i = 1:100
     tic;
