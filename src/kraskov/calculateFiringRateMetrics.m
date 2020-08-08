@@ -15,7 +15,7 @@ num_data = [100, 1000, 10000, 100000];
 %num_data = [1000000];
 
 % Number of variables or regions
-num_variables = 10;
+num_variables = 4;
 
 for i = 1:numel(data_dir)
     firing_i_folder = fullfile(data_folder, string(data_dir(i).name), filesep);
