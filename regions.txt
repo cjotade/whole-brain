@@ -10,7 +10,7 @@ dmn_ids = [12 79 16 75 18 73 33 58 34 57]
 34:'L Precuneus    '
 57: 'R Precuneus    '
 
-no_dmn_ids = [5 13 85 43 22 76 21 60 32 18]
+random_ids = [5 13 85 43 22 76 21 60 32 18]
 5: 'L Front Mid Orb'
 13:'L Front Med Orb'
 85:'R Front Inf Ope'
